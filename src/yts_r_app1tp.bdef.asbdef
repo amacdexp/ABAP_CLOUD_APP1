@@ -1,0 +1,27 @@
+managed implementation in class zbp_ts_r_app1tp unique;
+strict;
+extensible;
+with draft;
+
+define behavior for YTS_R_APP1TP alias APP1
+extensible
+persistent table YTS_APP1
+draft table YTS_APP1D
+lock master total etag Lastchangedat
+etag master Locallastchangedat
+authorization master ( global )
+
+{
+  create;
+  update;
+  delete;
+
+  draft action Edit; draft action Activate; draft action Discard; draft action Resume; draft determine action Prepare;
+
+  mapping for YTS_APP1 { Key1 = key1;
+                         Cfield1 = cfield1;
+                         Cfield2 = cfield2; Cfield3_map2 = cfield3;
+                         Curr1 = Curr1; Curr2 = Curr2; Curr3 = Curr3; }
+  field ( readonly ) Lastchangedat, locallastchangedat;
+
+}

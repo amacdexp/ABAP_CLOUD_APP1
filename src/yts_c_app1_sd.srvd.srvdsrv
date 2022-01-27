@@ -1,0 +1,4 @@
+@EndUserText.label: 'YTS_C_APP1_SD'
+define service YTS_C_APP1_SD {
+  expose YTS_C_APP1;
+}
